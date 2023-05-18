@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Week 11 Quiz</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            .container {
+                display: grid;
+                grid-template-columns: 0.6fr 2.1fr 0.7fr 1fr;
+                grid-template-rows: 0.3fr 1.5fr 1.2fr;
+                gap: 0px 0px;
+                grid-auto-flow: row;
+                grid-template-areas:
+                "grid-header grid-header grid-header grid-header"
+                "grid-nav grid-text grid-svg grid-svg"
+                "grid-nav grid-text grid-controls grid-controls";
+            }
+            .grid-header { grid-area: grid-header; }
+            .grid-text { grid-area: grid-text;}
+            .grid-svg { grid-area: grid-svg; }
+            .grid-controls { grid-area: grid-controls; }
+            .grid-nav { grid-area: grid-nav; }
+        </style>
+    </head>
+    <body>
+        <h1 style="display: inline;"> Week 11 Quiz </h1>
+        <div class="container">
+            <div class="grid-header" style="text-align:center;">
+                <h1> Kitty World</h1>
+            </div>
+            <div class="grid-nav" style="text-align:center;">
+                <button class="tablinks" style="width:80%" onclick="introkitty('kitty1')" id="defaultopen">Kitty1</button>
+                <button class="tablinks" style="width:80%" onclick="introkitty('kitty2')">Kitty2</button>
+            </div>
+            <div id="kitty1" class="grid-text">
+                <h3 style="display: inline;">Kitty1</h3>
+                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since 
+                    the 1500s, when an unknown printer took a galley of type and scrambled 
+                    it to make a type specimen book. It has survived not only five centuries, 
+                    but also the leap into electronic typesetting, remaining essentially unchanged.
+                </p>
+            </div>
+            <div id="kitty2" class="grid-text">
+                <h3 style="display: inline;">Kitty2</h3>
+                <p> There are many variations of passages of Lorem Ipsum available, but the 
+                    majority have suffered alteration in some form, by injected humour, or 
+                    randomised words which don't look even slightly believable. If you are 
+                    going to use a passage of Lorem Ipsum, you need to be sure there isn't 
+                    anything embarrassing hidden in the middle of text. All the Lorem 
+                    Ipsum generators on the Internet tend to repeat predefined chunks as 
+                    necessary, making this the first true generator on the Internet. It uses 
+                    a dictionary of over 200 Latin words, combined with a handful of model 
+                    sentence structures, to generate Lorem Ipsum which looks reasonable. 
+                    The generated Lorem Ipsum is therefore always free from repetition, 
+                    injected humour, or non-characteristic words etc.
+                </p>
+            </div>
+            <div class="grid-svg">
+                    <svg id="svg_canvas" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="rectcolor" width="100%" height="100%" style="fill:rgb(252, 252, 201);"/>
+                        <circle cx="0%" cy="50%" r="50" style="fill:rgb(244, 170, 239)"/>
+                        <circle cx="70%" cy="45%" r="50" style="fill:rgb(244, 170, 239)"/>
+                        <circle cx="10%" cy="10%" r="50" style="fill:rgb(244, 170, 239)"/>
+                        <circle cx="40%" cy="33%" r="50" style="fill:rgb(244, 170, 239)"/>
+                        <circle cx="90%" cy="90%" r="50" style="fill:rgb(244, 170, 239)"/>
+                        <circle cx="40%" cy="85%" r="50" style="fill:rgb(244, 170, 239)"/>
+                        <circle cx="70%" cy="85%" r="50" style="fill:rgb(244, 170, 239)"/>
+                        <circle cx="20%" cy="65%" r="50" style="fill:rgb(244, 170, 239)"/>
+                        <circle cx="67%" cy="13%" r="50" style="fill:rgb(244, 170, 239)"/>
+                    </svg>                
+            </div>
+            <div class="grid-controls" style="text-align:center; ">
+                <input type="button" onClick="parent.open('https://placekitten.com/')" value="Click me to see more pictures!">
+            </div>
+        </div>
+        
+        <script language="javascript">
+            function introkitty(kittynum) {
+                var i, tabcontent, svgcolor;
+                tabcontent = document.getElementsByClassName("grid-text");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                rectcolor = document.getElementById("rectcolor");
+                if(kittynum=="kitty1")
+                { rectcolor.setAttribute("style", "fill:rgb(252, 252, 201);"); }
+                else{ rectcolor.setAttribute("style", "fill:rgb(155, 232, 233);"); }
+                document.getElementById(kittynum).style.display = "block";
+            }
+            document.getElementById("defaultopen").click();
+            console.log("This is my week11 quiz")
+        </script>
+        <script language="javascript" src="script11.js"></script>
+    </body>
+    
+</html>
