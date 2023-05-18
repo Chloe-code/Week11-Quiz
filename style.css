@@ -1,0 +1,55 @@
+h1 {
+    color: rgb(232, 172, 215);
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-text-stroke: 1px #6c5a3b;
+
+
+}
+#first-heading{
+    background-color: rgb(255, 237, 214);
+    display:inline;
+    font-family: 'Courier New', Courier, monospace;
+    color: #6c5a3b;
+}
+
+
+.centered { /**用點(class)表示rule，id用#特定呼叫**/
+    text-align: center;
+}
+
+.stroke2px{
+    stroke-width: 2px;
+}
+
+.byline{
+    stroke-width: 2px;
+    stroke:rgb(238, 165, 47);
+}
+.byline2{
+    stroke:rgb(73, 49, 11);
+    stroke-width:3px
+}
+.byline3{
+    stroke:rgb(0, 0, 0);
+    stroke-width:2px
+}
+.blur{
+    filter: blur(1.5px);
+}
+.bycircle{
+    fill:transparent; 
+    stroke: rgb(41, 73, 120);
+}
+.bycircle2{
+    fill:rgb(41, 73, 120);
+    stroke-width: 2px;
+}
+.button{
+    background-color:#ffffff;
+    color:black;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 5px 24px;
+    border: 2px solid #555555
+}
+  
